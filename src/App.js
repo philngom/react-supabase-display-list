@@ -4,6 +4,7 @@ import CarsList from './CarsList/CarsList';
 import { fetchAllCars, fetchAllCountries, fetchAllDogs, fetchPeople } from './services/fetch-utils';
 import CountriesList from './CountriesList/CountriesList';
 import DogsList from './DogsList/DogsList';
+import PeopleList from './PeopleList/PeopleList';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
       <CarsList cars={cars}/>
       <CountriesList countries={countries}/>
       <DogsList dogs={dogs}/>
+      <PeopleList people={people}/>
     </div>
   );
 }
