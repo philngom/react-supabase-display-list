@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-// import CarsList from './CarsList/CarsList';
+import CarsList from './CarsList/CarsList';
 import { fetchAllCars } from './services/fetch-utils';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <CarsList cars={cars}/> */}
+      <CarsList cars={cars}/>
     </div>
   );
 }
