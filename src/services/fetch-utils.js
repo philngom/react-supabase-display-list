@@ -23,3 +23,11 @@ export async function fetchAllDogs() {
 
   return checkError(data);
 }
+
+export async function fetchPeople() {
+  const data = await client
+    .from('people')
+    .select();
+
+  return checkError(data);
+}
