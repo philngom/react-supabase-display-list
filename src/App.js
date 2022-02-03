@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import CarsList from './CarsList/CarsList';
-import { fetchAllCars, fetchAllCountries, fetchAllDogs } from './services/fetch-utils';
+import { fetchAllCars, fetchAllCountries, fetchAllDogs, fetchPeople } from './services/fetch-utils';
 import CountriesList from './CountriesList/CountriesList';
 import DogsList from './DogsList/DogsList';
 
@@ -10,6 +10,7 @@ function App() {
   const [cars, setCars] = useState([]);
   const [countries, setCountries] = useState([]);
   const [dogs, setDogs] = useState([]);
+  const [people, setPeople] = useState([]);
 
   async function getCars() {
     const data = await fetchAllCars();
@@ -29,10 +30,17 @@ function App() {
     setDogs(data);
   }
 
+  async function getPeople() {
+    const data = await fetchPeople();
+
+    setPeople(data);
+  }
+
   useEffect(() => {
     getCars();
     getCountries();
     getDogs();
+    getPeople();
   }, []);
 
   return (
