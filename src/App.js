@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+// import CarsList from './CarsList/CarsList';
+import { fetchAllCars } from './services/fetch-utils';
 
 function App() {
+
+  const [cars, setCars] = useState([]);
+
+  async function getCars() {
+    const data = await fetchAllCars();
+
+    setCars(data);
+  }
+
+  useEffect(() => {
+    getCars();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <CarsList cars={cars}/> */}
     </div>
   );
 }
