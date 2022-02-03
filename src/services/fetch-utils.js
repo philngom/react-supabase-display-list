@@ -7,3 +7,11 @@ export async function fetchAllCars() {
 
   return checkError(data);
 }
+
+export async function fetchAllCountries() {
+  const data = await client
+    .from('countries')
+    .select();
+
+  return checkError(data);
+}
