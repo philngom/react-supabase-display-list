@@ -15,3 +15,11 @@ export async function fetchAllCountries() {
 
   return checkError(data);
 }
+
+export async function fetchAllDogs() {
+  const data = await client
+    .from('dogs')
+    .select();
+
+  return checkError(data);
+}
