@@ -1,11 +1,12 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import CarsList from './CarsList/CarsList';
-import { fetchAllCars } from './services/fetch-utils';
+import { fetchAllCars, fetchAllCountries } from './services/fetch-utils';
 
 function App() {
 
   const [cars, setCars] = useState([]);
+  const [countries, setCountries] = useState([]);
 
   async function getCars() {
     const data = await fetchAllCars();
@@ -13,8 +14,15 @@ function App() {
     setCars(data);
   }
 
+  async function getCountries() {
+    const data = await fetchAllCountries();
+
+    setCountries(data);
+  }
+
   useEffect(() => {
     getCars();
+    getCountries();
   }, []);
 
   return (
