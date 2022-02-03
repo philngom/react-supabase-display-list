@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import CarsList from './CarsList/CarsList';
 import { fetchAllCars, fetchAllCountries, fetchAllDogs } from './services/fetch-utils';
 import CountriesList from './CountriesList/CountriesList';
+import DogsList from './DogsList/DogsList';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
     <div className="App">
       <CarsList cars={cars}/>
       <CountriesList countries={countries}/>
+      <DogsList dogs={dogs}/>
     </div>
   );
 }
